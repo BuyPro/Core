@@ -1,0 +1,218 @@
+// out: ../css/main.css
+
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+@colour-impact: #DB4C39;
+@colour-foreground: #2D3638;
+@colour-background: #109489;
+@colour-emphasis: #44D487;
+@colour-pale: #D0DB86;
+
+@spacing-large: 1em;
+@spacing-block: 0.5em;
+@spacing-inline: 0.2em;
+
+@radius-large: 1em;
+@radius-small: 0.5em;
+
+@height-large: 6em;
+@height-medium: 4em;
+@height-small: 2em;
+
+@timing-long: 1s;
+@timing-medium: 0.5s;
+
+html, body {
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    color: @colour-foreground;
+    font-family: sans-serif;
+}
+
+input, textarea, select {
+    box-sizing: border-box;
+}
+
+.searchfield {
+    height: inherit;
+    display: inline-block;
+    vertical-align: top;
+    line-height:  ~"calc(100px + 1em)" !important;
+    margin-right: 1em;
+    .icon {
+        margin-left: -2em;
+    }
+}
+input.search {
+    border-radius: 1em;
+    border: none;
+    padding: 1em 2.5em 1em 1em;
+    display: inline-block;
+}
+
+.container {
+    background-color: @colour-background;
+    height: 100%;
+    position: relative;
+
+}
+
+.header {
+    & .branding {
+        margin: 0;
+        padding: 0;
+        background-color: @colour-impact;
+        height: ~"calc(100px + 1em)";
+        overflow: hidden;
+        -webkit-box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.75);
+        box-shadow: 0px 10px 15px -6px rgba(0,0,0,0.75);
+
+        & .title {
+            font-family: 'pacifico', cursive;
+            font-size: 3em;
+            padding: 0;
+            display: inline-block;
+            vertical-align: top;
+            height: ~"calc(100px + 0.33em)";
+            line-height: ~"calc(100px + 0.33em)";
+        }
+
+        & .logo {
+            margin: 0.5em 0.5em;
+        }
+    }
+    & nav {
+        background-color: @colour-foreground;
+        & .link-list {
+            li:hover:not(.active), & .active {
+                background-color: @colour-impact;
+                color: @colour-foreground;
+            }
+        }
+    }
+}
+
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & li {
+        color: @colour-impact;
+        position: relative;
+        padding: 1em 1.5em 1em 1.5em;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s linear, color 0.3s linear, filter 0.3s linear, -webkit-filter 0.3s linear, -moz-filter 0.3s linear, -o-filter 0.3s linear, -ms-filter 0.3s linear;
+        cursor: pointer;
+        width: 10em;
+        & ul {
+            position:absolute;
+            left:0;
+            top:40px;
+            overflow: visible;
+            visibility: hidden;
+            margin: 0;
+            padding: 0;
+            & li {
+
+                background-color: @colour-foreground;
+                &:hover {
+                    background-color: @colour-impact;
+                    color: @colour-foreground;
+                }
+                line-height: 40px;
+                position:relative;
+                margin:0;
+                display:block;
+            }
+        }
+    }
+
+
+    & li:hover ul, & a:hover ul , & ul:hover{
+        visibility: visible;
+    }
+
+    & a {
+        color: inherit;
+        text-decoration: inherit;
+        font-weight: inherit;
+    }
+}
+
+
+#content {
+    text-align: center;
+    & #loading-icon {
+        margin: 1em;
+    }
+}
+
+.slideable {
+    transition: top 0.1s linear;
+}
+.begin {
+    top: 100px;
+}
+
+.product {
+    height: 10em;
+    width: 90%;
+    margin: 0 auto;
+    border-top: solid grey 1px;
+    border-bottom: solid grey 1px;
+    padding: @spacing-block;
+    & .image {
+        position: relative;
+        height: 100%;
+        & img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    & .description {
+        position: relative;
+        height: 100%;
+        vertical-align: middle;
+    }
+    & .details {
+        position: relative;
+        height: 100%;
+        & span {
+            display: block;
+            position: relative;
+            height: 25%;
+        }
+    }
+}
+
+.bluranddisable {
+    filter: blur(5px);
+	-webkit-filter: blur(5px);
+}
+
+#popup {
+    position: absolute;
+    width: 50%;
+    top: 12.5%;
+    bottom: 12.5%;
+    left: 25%;
+    right: 25%;
+
+    background-color: @colour-background;
+    color: @colour-foreground;
+
+    border: 4px @colour-foreground solid;
+    border-radius: 3px;
+}
+
+form .row {
+    margin-top: @spacing-inline;
+}

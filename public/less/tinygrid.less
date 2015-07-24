@@ -1,0 +1,102 @@
+// out: ../css/tinygrid.css
+/*
+* tinyGRID and all associated works are licensed under a
+* Creative Commons Attribution Sharealike 4.0 International License.
+* To view a copy of the license, please visit
+* http://creativecommons.org/licenses/by/4.0/. All permutations of
+* this work must contain this text in addition to further attributions
+* required by others where appropriate.
+*
+* $author Louis Capitanchik
+* $version 1.0.0
+*/
+
+@import "tinygrid-variables";
+
+.clearfix {
+	zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}
+
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+.create-columns(@n, @size) when (@n > 0){
+	.col-@{size}-@{n}{
+		width: percentage(((@n * @column-width)) / 100); // + (@margin * (@n - 1))) / 100);
+	}
+	.create-columns(@n - 1, @size);
+}
+
+.create-column-offsets(@n, @size) when (@n > 0){
+	.col-offset-@{size}-@{n}{
+		margin-left: percentage(((@n * @column-width)) / 100); // + (@margin * (@n - 1))) / 100);
+	}
+	.create-column-offsets(@n - 1, @size);
+}
+
+.hide-on(@size){
+	.hide-@{size}{
+		display: none;
+	}
+}
+
+.grid, .grid-padded {
+	.clearfix;
+	overflow-x: hidden;
+}
+[class*="col-"] {
+	position: relative;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	padding-right: (@margin / 2);
+	padding-left: (@margin / 2);
+	float: left;
+	min-height: 1px;
+	width: 100%;
+}
+.grid-padded {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.row{
+	.clearfix;
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.create-columns(@columns, sm);
+.create-column-offsets(@columns, sm);
+
+@media (min-width: 768px){
+	.create-columns(@columns, md);
+	.create-column-offsets(@columns, md);
+}
+@media (min-width: 992px){
+	.create-columns(@columns, lg);
+	.create-column-offsets(@columns, lg);
+}
+@media (min-width: 1200px){
+	.create-columns(@columns, xl);
+	.create-column-offsets(@columns, xl);
+}
+
+/***************************************/
+
+@media (max-width: 767px){
+	.hide-on(sm);
+}
+@media (max-width: 991px){
+	.hide-on(md);
+}
+@media (max-width: 1199px){
+	.hide-on(lg);
+}

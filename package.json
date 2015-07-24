@@ -1,0 +1,26 @@
+{
+  "name": "BuyPro",
+  "version": "1.0.0",
+  "description": "An E-Commerce Framework",
+  "main": "buypro.js",
+  "scripts": {
+    "start": "node buypro",
+    "start-localtemp": "env TMPDIR=./tmp node buypro"
+  },
+  "keywords": [
+    "E-commerce",
+    "BuyPro",
+    "API"
+  ],
+  "author": "Louis Capitanchik <contact@louiscap.co> (http://github.com/Commander-lol)",
+  "license": "ISC",
+  "dependencies": {
+    "bp-http-server": "^1.0.0",
+    "bp-middleware": "^0.7.0",
+    "bp-router-core": "^1.2.6",
+    "bp-sideburns": "^1.1.0",
+    "bp-utilities": "^1.6.0",
+    "mysql": "^2.8.0",
+    "q": "^1.4.1"
+  }
+}
