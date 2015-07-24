@@ -20,6 +20,7 @@
     "bp-router-core": "^1.2.6",
     "bp-sideburns": "^1.1.0",
     "bp-utilities": "^1.6.0",
+    "crossdb": "^0.1.1",
     "mysql": "^2.8.0",
     "q": "^1.4.1"
   }
