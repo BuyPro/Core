@@ -48,7 +48,7 @@ sendErrorAndResolve = function(def, res, err) {
 }
 
 confdb.module = require(confdb.module);
-dbhandle = require("CrossDB")(confdb.adapter, confdb, require(confdb.initFile));
+dbhandle = require("crossdb")(confdb.adapter, confdb, require(confdb.initFile));
 require("./local_modules/PrepareQueries")(dbhandle);
 
 if (config.client.serveStatic) {
