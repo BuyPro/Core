@@ -14,7 +14,7 @@ module.exports = {
         use: "mysql", // Set to the name of the config to use
         mysql: {
             module: "mysql", // This will be require'd and passed to the adapter
-            initFile: "local_modules/mysql-dbinit", // This file will be used to initialise the Database
+            initFile: "./local_modules/mysql-dbinit", // This file will be used to initialise the Database
             adapter: "mysql", // The CrossDB adapter to use
             connect: { // Connect will be passed to the database module as an options object, refer
                        // To the documentation of your chosen module for more options
