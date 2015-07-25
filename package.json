@@ -1,6 +1,6 @@
 {
   "name": "BuyPro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An E-Commerce Framework",
   "main": "buypro.js",
   "scripts": {
