@@ -16,6 +16,7 @@ module.exports = {
             module: "mysql", // This will be require'd and passed to the adapter
             initFile: "./local_modules/mysql-dbinit", // This file will be used to initialise the Database
             adapter: "mysql", // The CrossDB adapter to use
+            dbname: "buypro",
             connect: { // Connect will be passed to the database module as an options object, refer
                        // To the documentation of your chosen module for more options
                 user: "changeme", // Database username to connect with
